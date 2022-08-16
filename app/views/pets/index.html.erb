@@ -3,7 +3,8 @@
 <ul>
   <% @pets.each do |pet| %>
     <li>
-      <%= link_to pet.name, pet_path(pet) %>
+      <%= link_to pet.name, pet_path(pet) %> |
+      <%= link_to 'delete', pet_path(pet), data: {turbo_method: 'delete', turbo_confirm: "Delete #{pet.name}?"} %>
     </li>
   <% end %>
 </ul>
