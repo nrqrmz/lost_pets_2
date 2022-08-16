@@ -18,6 +18,10 @@ class PetsController < ApplicationController
     redirect_to pet_path(@pet)
   end
 
+  def edit
+    @pet = Pet.find(params[:id])
+  end
+
   private
 
   def pet_params
